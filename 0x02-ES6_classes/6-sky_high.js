@@ -2,9 +2,6 @@ import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
-    if (typeof floors !== 'number') {
-      throw new TypeError('floor must be a number');
-    }
     // call constructor of super class (building) using super()
     super(sqft);
     // set the _floors property specific to the SkyHighBuilding class
@@ -14,6 +11,10 @@ export default class SkyHighBuilding extends Building {
   // define a getter for floors property
   get floors() {
     return this._floors;
+  }
+  // define a setter for floors property
+  set floors(value) {
+  return this._floors = value;
   }
 
   // define a getter for sqft property
